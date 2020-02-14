@@ -11,13 +11,13 @@ public class zhongwen {
 		String[] arr = new String[100];
 		Scanner in = new Scanner(System.in);
 		Map<String, Integer> maps = new HashMap<>();
-		changeOne c1 = new changeOne();// ÒıÓÃchangeOneÀà
-		changeTwo c2 = new changeTwo();// ÒıÓÃchangeTwoÀà
+		changeOne c1 = new changeOne();// å¼•ç”¨changeOneç±»
+		changeTwo c2 = new changeTwo();// å¼•ç”¨changeTwoç±»
 		while (!(a = in.nextLine()).equals("")) {
 			arr = a.split("\\s+");
-			if (arr[0].equals("ÕûÊı"))
+			if (arr[0].equals("æ•´æ•°"))
 				maps.put(arr[1], c1.changeInt(arr[3]));
-			else if (arr[1].equals("Ôö¼Ó"))
+			else if (arr[1].equals("å¢åŠ "))
 				for (String key : maps.keySet()) {
 					if (key.equals(arr[0])) {
 						int value = maps.get(key);
@@ -25,7 +25,7 @@ public class zhongwen {
 						break;
 					}
 				}
-			else if (arr[1].equals("¼õÉÙ"))
+			else if (arr[1].equals("å‡å°‘"))
 				for (String key : maps.keySet()) {
 					if (key.equals(arr[0])) {
 						int value = maps.get(key);
@@ -33,39 +33,42 @@ public class zhongwen {
 						break;
 					}
 				}
-			else if (arr[0].equals("¿´¿´"))
-				for (String key : maps.keySet()) {
-					if (key.equals(arr[1])) {
-						System.out.println(c2.changeString(maps.get(key)));
-						break;
+			else if (arr[0].equals("çœ‹çœ‹"))
+				if (arr[1].contains("â€œ") && arr[1].contains("â€"))
+					System.out.println(arr[1].substring(1,arr[1].length()-1));
+				else
+					for (String key : maps.keySet()) {
+						if (key.equals(arr[1])) {
+							System.out.println(c2.changeString(maps.get(key)));
+							break;
+						}
 					}
-				}
-			else if (arr[0].equals("Èç¹û"))
+			else if (arr[0].equals("å¦‚æœ"))
 				for (String key : maps.keySet()) {
 					if (key.equals(arr[1]))
 						if (maps.get(key) > c1.changeInt(arr[3])) {
-							if (!arr[5].equals("¿´¿´"))
+							if (!arr[5].equals("çœ‹çœ‹"))
 								for (String key1 : maps.keySet())
 									if (key1.equals(arr[5])) {
-										if (arr[6].equals("Ôö¼Ó"))
+										if (arr[6].equals("å¢åŠ "))
 											maps.put(arr[5], maps.get(key1) + c1.changeInt(arr[7]));
-										else if (arr[6].equals("¼õÉÙ"))
+										else if (arr[6].equals("å‡å°‘"))
 											maps.put(arr[5], maps.get(key1) - c1.changeInt(arr[7]));
 									} else
 										;
 							else
-								System.out.println(arr[6].replace("¡°", "").replace("¡±", ""));
+								System.out.println(arr[6].replace("â€œ", "").replace("â€", ""));
 						} else {
-							if (arr[8].equals("¿´¿´"))
-								System.out.println(arr[9].replace("¡°", "").replace("¡±", ""));
-							else if (arr[8].equals("ÎŞ"))
+							if (arr[8].equals("çœ‹çœ‹"))
+								System.out.println(arr[9].replace("â€œ", "").replace("â€", ""));
+							else if (arr[8].equals("æ— "))
 								;
 							else
 								for (String key1 : maps.keySet())
 									if (key1.equals(arr[9])) {
-										if (arr[10].equals("Ôö¼Ó"))
+										if (arr[10].equals("å¢åŠ "))
 											maps.put(arr[9], maps.get(key1) + c1.changeInt(arr[11]));
-										else if (arr[10].equals("¼õÉÙ"))
+										else if (arr[10].equals("å‡å°‘"))
 											maps.put(arr[9], maps.get(key1) - c1.changeInt(arr[11]));
 									}
 						}
