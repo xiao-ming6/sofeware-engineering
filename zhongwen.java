@@ -14,7 +14,7 @@ public class zhongwen {
 		changeOne c1 = new changeOne();// 引用changeOne类
 		changeTwo c2 = new changeTwo();// 引用changeTwo类
 		while (!(a = in.nextLine()).equals("")) {
-			arr = a.split(" ");
+			arr = a.split("\\s+");
 			if (arr[0].equals("整数"))
 				maps.put(arr[1], c1.changeInt(arr[3]));
 			else if (arr[1].equals("增加"))
