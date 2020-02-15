@@ -5,33 +5,33 @@ public class changeOne{
 	String[] arr=new String[20];
 	public int onedigit(String a) {
 		this.a=a;
-		if(a.equals("Áã"))
+		if(a.equals("é›¶"))
 			return 0;
-		else if(a.equals("Ò»"))
+		else if(a.equals("ä¸€"))
 			return 1;
-		else if(a.equals("¶ş"))
+		else if(a.equals("äºŒ"))
 			return 2;
-		else if(a.equals("Èı"))
+		else if(a.equals("ä¸‰"))
 			return 3;
-		else if(a.equals("ËÄ"))
+		else if(a.equals("å››"))
 			return 4;
-		else if(a.equals("Îå"))
+		else if(a.equals("äº”"))
 			return 5;
-		else if(a.equals("Áù"))
+		else if(a.equals("å…­"))
 			return 6;
-		else if(a.equals("Æß"))
+		else if(a.equals("ä¸ƒ"))
 			return 7;
-		else if(a.equals("°Ë"))
+		else if(a.equals("å…«"))
 			return 8;
-		else if(a.equals("¾Å"))
+		else if(a.equals("ä¹"))
 			return 9;
-		else if(a.equals("Ê®"))
+		else if(a.equals("å"))
 			return 10;
 		return (Integer) null;	
 	}
 	public int twodigit(String a) {
 		this.a=a;
-		arr=a.split("Ê®");
+		arr=a.split("å");
 		if(a.length()==2&&arr.length==1) 
 			return onedigit(arr[0])*10;
 		else if(a.length()==2&&arr.length==2) 
@@ -41,10 +41,10 @@ public class changeOne{
 	}
 	public int threedigit(String a) {
 		this.a=a;
-		arr=a.split("°Ù");
+		arr=a.split("ç™¾");
 		if(a.length()==2)
 			return onedigit(arr[0])*100;
-		else if(arr[1].contains("Áã"))
+		else if(arr[1].contains("é›¶"))
 			return onedigit(arr[0])*100+onedigit(arr[1].substring(1));
 		else if(arr[1].length()==1)
 			return onedigit(arr[0])*100+onedigit(arr[1])*10;
@@ -53,12 +53,12 @@ public class changeOne{
 	}
 	public int fourdigit(String a) {
 		this.a=a;
-		arr=a.split("Ç§");
+		arr=a.split("åƒ");
 		if(a.length()==2)
 			return onedigit(arr[0])*1000;
-		else if(arr[1].contains("Áã")&&a.length()==4)
+		else if(arr[1].contains("é›¶")&&a.length()==4)
 			return onedigit(arr[0])*1000+onedigit(arr[1].substring(1));
-		else if(arr[1].contains("Áã")&&!arr[1].substring(1).contains("Áã"))
+		else if(arr[1].contains("é›¶")&&!arr[1].substring(1).contains("é›¶"))
 			return onedigit(arr[0])*1000+twodigit(arr[1].substring(1));
 		else if(arr[1].length()==1)
 			return onedigit(arr[0])*1000+onedigit(arr[1])*100;
@@ -67,14 +67,13 @@ public class changeOne{
 	}
 	public int changeInt(String a) {
 		this.a=a;
-		if(a.contains("Ç§"))
+		if(a.contains("åƒ"))
 			return fourdigit(a);
-		else if(a.contains("°Ù"))
+		else if(a.contains("ç™¾"))
 			return threedigit(a);
-		else if(a.contains("Ê®")&&a.length()>1)
+		else if(a.contains("å")&&a.length()>1)
 			return twodigit(a);
 		else
 			return onedigit(a);
 	}
 }
-

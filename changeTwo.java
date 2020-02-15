@@ -5,72 +5,72 @@ public class changeTwo {
 	public String onedigit(int b) {
 		this.b=b;
 		if(b==0)
-			return "Áã";
+			return "é›¶";
 		else if(b==1)
-			return "Ò»";
+			return "ä¸€";
 		else if(b==2)
-			return "¶ş";
+			return "äºŒ";
 		else if(b==3)
-			return "Èı";
+			return "ä¸‰";
 		else if(b==4)
-			return "ËÄ";
+			return "å››";
 		else if(b==5)
-			return "Îå";
+			return "äº”";
 		else if(b==6)
-			return "Áù";
+			return "å…­";
 		else if(b==7)
-			return "Æß";
+			return "ä¸ƒ";
 		else if(b==8)
-			return "°Ë";
+			return "å…«";
 		else if(b==9)
-			return "¾Å";
+			return "ä¹";
 		else if(b==10)
-			return "Ê®";
+			return "å";
 		return null;
 	}
 	public String twodigit(int b) {
 		this.b=b;
 		if(b%10==0)
-			return (onedigit(b/10)+"Ê®");
+			return (onedigit(b/10)+"å");
 		else
-			return (onedigit(b/10)+"Ê®"+onedigit(b%10));
+			return (onedigit(b/10)+"å"+onedigit(b%10));
 	}
 	public String threedigit(int b) {
 		this.b=b;
 		if(b%100==0)
-			return (onedigit(b/100)+"°Ù");
+			return (onedigit(b/100)+"ç™¾");
 		else if(b%10==0)
-			return (onedigit(b/100)+"°Ù"+onedigit(b%100/10));
+			return (onedigit(b/100)+"ç™¾"+onedigit(b%100/10));
 		else if(b%100<10&&b%100>0)
-			return (onedigit(b/100)+"°Ù"+onedigit(b/10%10)+onedigit(b%100));
+			return (onedigit(b/100)+"ç™¾"+onedigit(b/10%10)+onedigit(b%100));
 		else
-			return (onedigit(b/100)+"°Ù"+twodigit(b%100));
+			return (onedigit(b/100)+"ç™¾"+twodigit(b%100));
 	}
 	public String fourdigit(int b) {
 		this.b=b;
 		if(b%1000==0)
-			return (onedigit(b/1000)+"Ç§");
+			return (onedigit(b/1000)+"åƒ");
 		if(b%100==0)
-			return (onedigit(b/1000)+"Ç§"+onedigit(b/100%10));
+			return (onedigit(b/1000)+"åƒ"+onedigit(b/100%10));
 		else if(b%1000<10&&b%1000>0)
-			return (onedigit(b/1000)+"Ç§"+onedigit(b/10%100)+onedigit(b%1000));
+			return (onedigit(b/1000)+"åƒ"+onedigit(b/10%100)+onedigit(b%1000));
 		else if(b%1000<100&&b%1000>10)
-			return (onedigit(b/1000)+"Ç§"+onedigit(b/100%10)+twodigit(b%100));
+			return (onedigit(b/1000)+"åƒ"+onedigit(b/100%10)+twodigit(b%100));
 		else
-			return (onedigit(b/1000)+"Ç§"+threedigit(b%1000));
+			return (onedigit(b/1000)+"åƒ"+threedigit(b%1000));
 	}
 	public String changeString(int b) {
 		this.b=b;
 		if(b<0) {
 			b=0-b;
 			if(b/1000>0&&b/1000<10)
-				return "¸º"+fourdigit(b);
+				return "è´Ÿ"+fourdigit(b);
 			else if(b/100>0&&b/100<10)
-				return "¸º"+threedigit(b);
+				return "è´Ÿ"+threedigit(b);
 			else if(b/10>0&&b/10<10&&b!=10)
-				return "¸º"+twodigit(b);
+				return "è´Ÿ"+twodigit(b);
 			else 
-				return "¸º"+onedigit(b);
+				return "è´Ÿ"+onedigit(b);
 		}
 		else
 			if(b/1000>0&&b/1000<10)
